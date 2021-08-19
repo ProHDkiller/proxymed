@@ -56,6 +56,8 @@ TextStyle bottomStyle = GoogleFonts.poppins(
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      endDrawer: Drawer(),
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
@@ -117,13 +119,19 @@ TextStyle bottomStyle = GoogleFonts.poppins(
                   padding: const EdgeInsets.only(right: 20),
                   child: InkWell(
                     child: Text('A-propos', style: appBarStyle),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, 'newRdv');
+                    },
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 20),
                   child: InkWell(
                     child: Text('Contact', style: appBarStyle),
+                    onTap: (){
+                      Navigator.of(context).pushNamed('dash');
+
+                    },
                   ),
                 ),
                 Padding(
