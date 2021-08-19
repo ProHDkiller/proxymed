@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:proxymed/main.dart';
 
 
 
@@ -19,12 +20,12 @@ class EMed extends StatefulWidget {
 class _EMedState extends State<EMed> {
   bool _initialized = false;
   bool _error=false;
-
   TextStyle appBarStyle =
       GoogleFonts.poppins(fontSize: 16, color: Colors.black);
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passController = TextEditingController();
 
+late final currentUser;
   void initializeFlutterFire() async {
     try {
       // Wait for Firebase to initialize and set `_initialized` state to true
@@ -263,7 +264,7 @@ shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
 }
 
 
- signIn(String email, String pass) async {
+ signUp(String email, String pass) async {
 
 
 
@@ -288,3 +289,34 @@ shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
    }
 
  }
+
+ signIn (String email,String pass) async {
+   FirebaseAuth.instance
+       .authStateChanges()
+       .listen((User? user) {
+     if (user == null) {
+       print('User is currently signed out!');
+     } else {
+       print('User is signed in!');
+     }
+   });
+
+   try {
+     UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+         email: email,
+         password: pass
+     );
+   } on FirebaseAuthException catch (e) {
+     if (e.code == 'user-not-found') {
+       print('No user found for that email.');
+     } else if (e.code == 'wrong-password') {
+       print('Wrong password provided for that user.');
+     }
+   }
+   print('User Signed In Succesfully!');
+
+
+ }
+
+
+

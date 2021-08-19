@@ -44,7 +44,7 @@ class Rdv {
   Future<void> addRdv(String idMed) {
 
     FirebaseFirestore firestore = FirebaseFirestore.instance;
-    CollectionReference rdvs = FirebaseFirestore.instance.collection('rdv');
+    CollectionReference rdvs = firestore.collection('rdv');
     // Call the user's CollectionReference to add a new user
     return rdvs
         .add({

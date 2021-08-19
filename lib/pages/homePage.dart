@@ -4,7 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:proxymed/main.dart';
 import 'package:proxymed/widgets/firstPage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -113,6 +115,11 @@ TextStyle bottomStyle = GoogleFonts.poppins(
                   child: InkWell(
                     child:
                         Text('Espace Personnels de sante', style: appBarStyle),
+                    onTap: (){
+
+                      Navigator.of(context).pushNamed('profile');
+
+                    },
                   ),
                 ),
                 Padding(
