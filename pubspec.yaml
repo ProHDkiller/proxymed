@@ -32,6 +32,9 @@ dependencies:
   flutter_svg: ^0.22.0
   google_fonts: ^2.1.0
   awesome_dropdown: ^0.0.4
+  introduction_screen: ^2.1.0
+  firebase_auth: ^3.0.2
+  firebase_core: ^1.5.0
 
 dev_dependencies:
   flutter_test:

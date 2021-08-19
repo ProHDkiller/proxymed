@@ -27,9 +27,42 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script src="https://www.gstatic.com/firebase/8.9.1/firebase-analytics.js"></script>
+<!-- Initialize Firebase -->
+
+
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebase/init.js"></script>
+
+
+<script>
+var firebaseConfig = {
+
+  apiKey: "AIzaSyDyD7kM-j1D3suYprJMqg_J1nivqp7E8Rg",
+
+  authDomain: "proxymed-d15ac.firebaseapp.com",
+
+  projectId: "proxymed-d15ac",
+
+  storageBucket: "proxymed-d15ac.appspot.com",
+
+  messagingSenderId: "528139083212",
+
+  appId: "1:528139083212:web:0507f640c1a7a65dc8d169",
+
+  measurementId: "G-7ZN6WT2Y1N"
+
+};
+ firebase.initializeApp(firebaseConfig);
+
+</script>
   <script>
     var serviceWorkerVersion = null;
     var scriptLoaded = false;
