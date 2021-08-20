@@ -92,6 +92,9 @@ TextStyle bottomStyle = GoogleFonts.poppins(
                       'Accueil',
                       style: appBarStyle,
                     ),
+                    onTap: (){
+                      Navigator.pushNamed(context, 'calendar');
+                    },
                   ),
                 ),
                 Padding(

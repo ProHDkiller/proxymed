@@ -38,6 +38,7 @@ dependencies:
   cloud_firestore: ^2.5.0
   syncfusion_flutter_calendar: ^19.2.56
   table_calendar: 3.0.2
+  intl: ^0.17.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
