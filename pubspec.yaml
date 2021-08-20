@@ -37,7 +37,7 @@ dependencies:
   firebase_core: ^1.5.0
   cloud_firestore: ^2.5.0
   syncfusion_flutter_calendar: ^19.2.56
-
+  table_calendar: 3.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
