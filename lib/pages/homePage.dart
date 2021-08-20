@@ -92,6 +92,10 @@ TextStyle bottomStyle = GoogleFonts.poppins(
                       'Accueil',
                       style: appBarStyle,
                     ),
+                    onTap: (){
+                      Navigator.pushNamed(context, 'details');
+
+                    },
                   ),
                 ),
                 Padding(

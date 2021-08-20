@@ -6,7 +6,8 @@ import 'package:proxymed/pages/profile.dart';
 import 'package:proxymed/pages/rendezVous.dart';
 import 'package:proxymed/pages/dashboard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
+import 'package:proxymed/pages/dashMed.dart';
+import 'package:proxymed/pages/details.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
 await Firebase.initializeApp();
@@ -30,7 +31,9 @@ class MyApp extends StatelessWidget {
         'eMed': (context) => EMed(),
         '/': (context) => HomePage(),
         'newRdv': (context) => PageRdv(),
-        'dash': (context)=> Dashboard(),
+        'dash': (context) => Dashboard(),
+        'dashMed': (context) => DashMed(),
+        'details':(context) => Details(),
 
       },
     );
